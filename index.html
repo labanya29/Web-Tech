@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library From</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Display Id-->
+    <div class ="ID">
+        <img src="css/ID.png" alt="Student Id">
+    </div>
+    <!--Borrow-->
+    <div class="form-container">
+        <h2>Borrow Form</h2>
+        <form action="process.php" method="post">
+            <lebel for="studentName">Student Full Name</lebel>
+            <input type="text" id="studentName" name="studentName" required>
+
+            <lebel for="studentID">Student ID</lebel>
+            <input type="text" id="studentID" name="studentID" required>
+
+            <lebel for="bookTitle">Book Title</lebel>
+            <input type="text" id="bookTitle" name="bookTitle" required>
+
+            <lebel for="borrowDate">Borrow Date</lebel>
+            <input type="date" id="borrowDate" name="borrowDate" required>
+
+            <lebel for="token">Token</lebel>
+            <input type="text" id="token" name="token" required>
+
+            <lebel for="returnDate">Student Full Name</lebel>
+            <input type="date" id="returnDate" name="returnDate" required>
+
+            <label for="fees">Fees</label>
+            <input type="text" id="fees" name="fees" required>
+
+            <label for="paid">Paid</label>
+            <select id="paid" name="paid" requiured>
+                <option value="yes">yes</option>
+                <option value="no">No</option>
+
+            </select>
+        </form>
+        <input type="submit" name="submit" value="Submit" class="submit">
+    </div>
+</body>
+</html>
