@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 <?php
 // process.php
 
@@ -13,6 +22,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fees = htmlspecialchars($_POST['fees']);
     $paid = htmlspecialchars($_POST['paid']);
 
+    if(!preg_match("/^[A-Za-z\-]+$/",$_POST['studentName']))
+    {
+        echo "Invalid Name";
+        return;
+    } 
+ 
+    if (!preg_match("/\d{2}-\d{5}-\d{1}/" , $_POST['studentID']))
+    {
+        echo "Student ID is Invalid";
+        return;
+    }
+
+$data1=new DateTime($borrowDate);
+$data1=new DateTime($returnDate);
+$interval = date_diff($data1,$data2);
+if(($internal->format('%d'))>10)
+{
+    echo "Can't borrow a book more than 10 days";
+    return;
+}
+
     // Display the submitted data (for debugging purposes)
     echo "<h2>Borrow Form Submission</h2>";
     echo "<p><strong>Student Full Name:</strong> $studentName</p>";
@@ -26,9 +56,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Here you can add code to save the data to a database
     // or perform other processing as needed
-} else {
+} 
+else {
     // Redirect to the form page if accessed directly
     header("Location: form_page.php"); // Replace 'form_page.php' with your form's file name
     exit();
 }
+
 ?>
+
+
+</body>
+</html>
